@@ -1,0 +1,25 @@
+.detail_line_div .col-md-1{
+    border-right:1px solid #ddd;
+}
+.detail_line_div div{
+    height:35px;
+    line-height: 35px;
+    border-bottom:1px solid #ddd;
+}
+.textarea-div{
+    height:90px !important;
+    line-height: 90px !important;
+}
+.textarea-div textarea{
+    height:80px;
+    max-width: 300px;
+    margin-top: 5px;
+    line-height: 20px;
+}
+
+#main_frame{
+    height: 100%;
+    width: 99.99%;
+    z-index: 20;
+    border: 0;
+}

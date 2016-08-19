@@ -1,0 +1,29 @@
+{
+  "name": "sun",
+  "description": "sun static file",
+  "authors": [
+    "taochao"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap3.3.6": "bootstrap#3.3.6",
+    "datatables.net": "^1.10.11",
+    "datatables.net-bs": "^1.10.11",
+    "jquery1.11.3": "jquery#1.11.3",
+    "smalot-bootstrap-datetimepicker2.2.0": "bootstrap-datetimepicker-master#2.2.0",
+    "font-awesome": "^4.6.3",
+    "bootstrap-select": "^1.10.0",
+    "gentelella": "1.1.0",
+    "datatables.net-buttons": "^1.2.2"
+  }
+}
