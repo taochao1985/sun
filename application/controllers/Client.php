@@ -7,15 +7,16 @@ class Client extends CI_Controller {
     {
         parent::__construct();
         $this->load->model("sun");
-        $this->top();
+        $this->user = $this->top();
     }
 
     public function index()
     {
-        $client_id      = $this->uri->segment(3);
-        $client_info    = $this->sun->select('clients','*',array('id'=>$client_id));
-        $data['client'] = $client_info[0];
-
+        $today_date = date('Y-m-d');
+        $client_info    = $this->sun->select('original_lists','*',array('m_id'=>0),1,0,array('id'=>'desc'));
+        $temp_client = $client_info[0];
+        $this->sun->update('original_lists',array('m_id'=>$this->user->id,'used_date'=>$today_date,'used_time'=>date('H:i:s')),array('id'=>$temp_client->id));
+        $data['client'] = $temp_client;
         $this->load->view('client/index',$data);
     }
 

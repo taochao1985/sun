@@ -24,6 +24,7 @@
     "font-awesome": "^4.6.3",
     "bootstrap-select": "^1.10.0",
     "gentelella": "1.1.0",
-    "datatables.net-buttons": "^1.2.2"
+    "datatables.net-buttons": "^1.2.2",
+    "blueimp-file-upload": "jquery-file-upload#^9.12.5"
   }
 }

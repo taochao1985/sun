@@ -8,8 +8,15 @@ class Main extends CI_Controller {
         parent::__construct();
         $this->load->model("sun");
     }
+
+    function upload(){
+        require_once APPPATH."libraries/UploadHandler.php";
+        $upload_handler = new UploadHandler();
+    }
+
     public function index()
     {
+
         $this->top();
         $this->load->view('main_iframe');
     }

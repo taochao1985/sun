@@ -1,6 +1,20 @@
 <?php
 class Sun extends CI_Model {
 
+    function _generate_code($len = 20){
+        $chars = '0123456789';
+
+        for ($i = 0, $count = strlen($chars); $i < $count; $i++)
+        {
+        $arr[$i] = $chars[$i];
+        }
+
+        mt_srand((double) microtime() * 1000000);
+        shuffle($arr);
+        $code = substr(implode('', $arr),0 , $len);
+        return $code;
+  }
+
     function select_count_where($table,$cond='',$like='',$or_like=''){
         if ($cond){
            $this->db->where($cond);

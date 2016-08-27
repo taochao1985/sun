@@ -86,7 +86,6 @@ $(function() {
     $.post("/main/login", login_param, function(data) {
       if (data.success == 'yes') {
               window.location.href="index";
-
       } else {
         $btn.removeClass("disabled");
         alert('用户名或密码错误！');

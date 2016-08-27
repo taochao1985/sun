@@ -28,8 +28,12 @@
 
 <?php
   $user = $this->session->userdata('member');
-
 ?>
+<style type="text/css">
+  .btn{
+    margin-top: 10px;
+  }
+</style>
 <body class="nav-md">
 
   <div class="container body">
@@ -63,6 +67,16 @@
             <div class="menu_section">
               <h3>&nbsp;</h3>
               <ul class="nav side-menu">
+              <?php if($user->level == 1){?>
+                <li><a><i class="fa fa-cogs"></i> 数据管理 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/admin/data_import" target="main_frame">数据导入</a>
+                    </li>
+                    <li><a href="/admin/data_export" target="main_frame">数据导出</a>
+                    </li>
+                  </ul>
+                </li>
+              <?php }?>
               <?php if($user->level == 2){?>
                 <li><a><i class="fa fa-cogs"></i> 运营管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
@@ -81,23 +95,46 @@
               <?php }?>
              <?php if($user->level == 3){?>
                 <li>
-                  <a href="/client/index/17" target="main_frame"><i class="fa fa-bell"></i> 未处理名单</a>
+                  <a href="/client/index/17" target="main_frame"><i class="fa fa-bell"></i> 提取新名单</a>
                 </li>
-              <li><a><i class="fa fa-calendar"></i> 预约管理 <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
-                    <li><a href="/date/not_date" target="main_frame">未预约</a>
+              <li><a><i class="fa fa-calendar"></i> 预约前管理 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/date/not_date" target="main_frame">接触待跟踪</a>
                     </li>
-                    <li><a href="index2.html" target="main_frame">已预约待上门</a>
+                    <li><a href="index2.html" target="main_frame">对话待跟踪</a>
                     </li>
-                    <li><a href="index3.html">已预约待跟进</a>
+                    <li><a href="index3.html">筛选待跟踪</a>
                     </li>
-                    <li><a href="index3.html">上门前跟进</a>
+                    <li><a href="index3.html">预约待跟踪</a>
                     </li>
-                    <li><a href="index3.html">未上门</a>
+                  </ul>
+              </li>
+              <li><a><i class="fa fa-calendar"></i> 预约后管理 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/date/not_date" target="main_frame">登记客户短信跟进</a>
+                    </li>
+                    <li><a href="index2.html" target="main_frame">登记后取消前一天跟进</a>
+                    </li>
+                    <li><a href="index3.html">登记后取消当天更进</a>
+                    </li>
+                    <li><a href="index3.html">上门短信确认更进</a>
+                    </li>
+                    <li><a href="index3.html">上门前一天跟进</a>
+                    </li>
+                    <li><a href="index3.html">上门当天跟进</a>
+                    </li>
+                    <li><a href="index3.html">门店反馈上门信息</a>
+                    </li>
+                    <li><a href="index3.html">签约情况跟进</a>
+                    </li>
+                     <li><a href="index3.html">客户未上门提醒</a>
+                    </li>
+                    <li><a href="index3.html">放款成功回访任务</a>
                     </li>
                   </ul>
                 </li>
              <?php }?>
+             <?php if($user->level != 1){?>
                 <li><a><i class="fa fa-suitcase"></i> 销售管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
                     <li><a href="index.html">综合查询</a>
@@ -112,6 +149,7 @@
                     </li>
                   </ul>
                 </li>
+            <?php }?>
               <?php if($user->level == 2){?>
                 <li><a><i class="fa fa-suitcase"></i> 报表 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
@@ -149,17 +187,15 @@
                     </li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-mortar-board"></i>知识库系统 <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu" style="display: none">
+              <?php if($user->level != 1){?>
 
-                  </ul>
-                </li>
                 <li>
                   <a href="javascript:void(0)" class="info-number"><i class="fa fa-bullhorn"></i> 取消提醒<span class="badge bg-green setintval_span">6</span></a>
                 </li>
                 <li>
                   <a href="javascript:void(0)" class="info-number"><i class="fa fa-bell"></i> 重要提醒 <span class="badge bg-green setintval_span">3</span></a>
                 </li>
+              <?php }?>
               </ul>
             </div>
 
@@ -178,8 +214,8 @@
             <div class="nav toggle">
               <a id="menu_toggle"><i class="fa fa-bars"></i></a>
             </div>
-
             <ul class="nav navbar-nav navbar-right">
+
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                   <img src="/assets/images/portrait.png" alt="">John Doe
@@ -208,62 +244,7 @@
                   <span class="badge bg-green">6</span>
                 </a>
                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="/assets/images/portrait.png" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="/assets/images/portrait.png" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="/assets/images/portrait.png" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image">
-                                        <img src="/assets/images/portrait.png" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                    </a>
-                  </li>
+
                   <li>
                     <div class="text-center">
                       <a>
@@ -274,7 +255,12 @@
                   </li>
                 </ul>
               </li>
-
+             <?php if($user->level == 3){?> <li>
+                  <button class="btn btn-primary" type="button">拨号</button>
+                  <button class="btn btn-success" type="button">短信</button>
+                  <button class="btn btn-info" type="button">微信</button>
+              </li>
+            <?php }?>
             </ul>
           </nav>
         </div>
@@ -283,10 +269,9 @@
       <!-- /top navigation -->
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/custom.js"></script>
       <!-- page content -->
 <div class="right_col" role="main">
-<iframe src="/main/main" frameborder="0" id="main_frame" name="main_frame"></iframe>
+<iframe src="<?php if($user->level==1){?>/admin/data_import<?php }else{ ?>/main/main <?php }?>" frameborder="0" id="main_frame" name="main_frame"></iframe>
  </div>
   </div>
 </div>

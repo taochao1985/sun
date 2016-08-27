@@ -4,7 +4,7 @@
  <div class="container form-inline main_client_info">
     <div class="form-group">
       <label for="exampleInputName2">订单编号：</label>
-      <input type="text" class="form-control" id="exampleInputName2" >
+      <input type="text" class="form-control" id="exampleInputName2" value="<?php echo $client->order_no;?>" disabled>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail2">销售状态：</label>
@@ -67,7 +67,7 @@
               现单位工作时间：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control">
+              <select class="form-control" name="work_time_1">
                 <option value="">请选择</option>
                 <option value="0"> <6个月 </option>
                 <option value="1"> >=6个月</option>
@@ -79,7 +79,7 @@
               工资发放形式：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control">
+              <select class="form-control" name="salary_pay_method_1">
                 <option value="">请选择</option>
                 <option value="0">男</option>
                 <option value="1">女</option>
@@ -90,14 +90,14 @@
               代发：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="text" name="car_house" value="0.0" class="form-control" />
+              <input type="text" name="bank_sent_salary_1" value="0.0" class="form-control" />
           </div>
 
           <div class="col-md-2 col-sm-2 col-xs-2 btn-warning">
               税后月收入流水：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="text" name="car_house" value="0.0" class="form-control" />
+              <input type="text" name="salary_after_tax_1" value="0.0" class="form-control" />
           </div>
           <div class="col-md-8 col-sm-8 col-xs-8 bg-warning">
           </div>
@@ -110,7 +110,7 @@
               营业执照期满时间：
           </div>
           <div class="col-md-3 col-sm-3 col-xs-3 bg-warning">
-              <select class="form-control">
+              <select class="form-control" name="business_license_time_2">
                 <option value="">请选择</option>
                 <option value="0"> <6个月 </option>
                 <option value="1"> >=6个月</option>
@@ -122,7 +122,7 @@
               月经营流水：
           </div>
           <div class="col-md-3 col-sm-3 col-xs-3 bg-warning">
-              <input type="text" name="car_house" value="" class="form-control" />
+              <input type="text" name="permonth_income_2" value="" class="form-control" />
           </div>
 
       </div>
@@ -133,7 +133,7 @@
               现单位工作时间：
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6 bg-warning">
-              <select class="form-control">
+              <select class="form-control" name="current_work_time_3">
                 <option value="">请选择</option>
                 <option value="0"> <6个月 </option>
                 <option value="1"> >=6个月</option>
@@ -144,7 +144,7 @@
               每月实际流水：
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6 bg-warning">
-              <input type="text" name="car_house" value="0.0"  />
+              <input type="text" name="permonth_real_income_3" value="0.0"  />
           </div>
       </div>
   <!--work_cond_third-->
@@ -154,7 +154,7 @@
               现单位工作时间：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control">
+              <select class="form-control" name="current_work_time_4">
                 <option value="">请选择</option>
                 <option value="0"> <6个月 </option>
                 <option value="1"> >=6个月</option>
@@ -166,7 +166,7 @@
               工资发放形式：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control">
+              <select class="form-control" name="salary_pay_method_4">
                 <option value="">请选择</option>
                 <option value="0">男</option>
                 <option value="1">女</option>
@@ -177,35 +177,40 @@
               代发：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="text" name="car_house" value="0.0" class="form-control" />
+              <input type="text" name="bank_sent_salary_4" value="0.0" class="form-control" />
           </div>
 
           <div class="col-md-2 col-sm-2 col-xs-2 btn-warning">
               每月实际流水：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="text" name="car_house" value="0.0" class="form-control" />
+              <input type="text" name="permonth_real_income_4" value="0.0" class="form-control" />
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 btn-warning">
               营业执照期满时间：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="text" name="car_house" value="" class="form-control" />
+              <select class="form-control" name="business_license_time_4">
+                <option value="">请选择</option>
+                <option value="0"> <6个月 </option>
+                <option value="1"> >=6个月</option>
+                <option value="1"> >1年</option>
+              </select>
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 btn-warning">
               月经营流水：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="text" name="car_house" value="0.0" class="form-control" />
+              <input type="text" name="permonth_income_4" value="0.0" class="form-control" />
           </div>
       </div>
-  <!--work_cond_fourth-->
+  <!--work_cond_fifth-->
     <div class="row detail_line_div work_cond_5 work_cond_detail hidden">
          <div class="col-md-2 col-sm-2 col-xs-2 btn-warning">
               营业执照期满时间：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control">
+              <select class="form-control" name="business_license_time_5">
                 <option value="">请选择</option>
                 <option value="0"> <6个月 </option>
                 <option value="1"> >=6个月</option>
@@ -217,14 +222,14 @@
               月经营流水：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="text" name="car_house" value="" class="form-control" />
+              <input type="text" name="permonth_income_5" value="" class="form-control" />
           </div>
 
           <div class="col-md-2 col-sm-2 col-xs-2 btn-warning">
               股份：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control">
+              <select class="form-control" name="share">
                 <option value="">请选择</option>
                 <option value="0"> <10% </option>
                 <option value="1"> <20% </option>
@@ -256,19 +261,19 @@
          <div class="col-md-3 col-sm-3 col-xs-3 bg-warning"></div>
 
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="checkbox" name="mobile" value="0" />&nbsp;&nbsp;是否为主贷人
+              <input type="checkbox" name="house_owner" value="0" />&nbsp;&nbsp;是否为主贷人
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
               已按揭月数：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-               <input type="text" name="mobile" value="0.0" class="form-control" />
+               <input type="text" name="house_payed_month" value="" class="form-control" />
           </div>
           <div class="col-md-1 col-sm-1 col-xs-1 bg-warning">
               按揭金额：
           </div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-               <input type="text" name="mobile" value="0.0" class="form-control" />
+               <input type="text" name="house_payed_price" value="0.0" class="form-control" />
           </div>
         </div>
 
@@ -283,7 +288,7 @@
               全价金额：
           </div>
           <div class="col-md-3 col-sm-3 col-xs-3 bg-warning">
-               <input type="text" name="mobile" value="0.0" class="form-control" />
+               <input type="text" name="car_total_price" value="0.0" class="form-control" />
           </div>
 
           <div class="detail_line_div car_type_select hidden">
@@ -301,13 +306,13 @@
                 裸车价:
               </div>
               <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-               <input type="text" name="mobile" value="0.0" class="form-control" />
+               <input type="text" name="car_real_price" value="0.0" class="form-control" />
              </div>
              <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
                按揭月份:
              </div>
              <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-                <select class="form-control">
+                <select class="form-control" name="car_payed_month">
                   <option value="0"> <6个月 </option>
                   <option value="1"> >=6个月</option>
                   <option value="1"> >1年</option>
@@ -317,7 +322,7 @@
                 按揭金额:
               </div>
               <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-               <input type="text" name="mobile" value="0.0" class="form-control" />
+               <input type="text" name="car_payed_price" value="0.0" class="form-control" />
              </div>
          </div>
 
@@ -327,8 +332,8 @@
       <div class="row detail_line_div">
           <div class="col-md-1 col-sm-1 col-xs-1 btn-warning">问题4</div><div class="col-md-11 col-sm-11 col-xs-11 btn-warning">在本司是否有未结清贷款？</div>
           <div class="col-md-1 col-sm-1 col-xs-1 bg-warning"></div><div class="col-md-11 col-sm-11 col-xs-11 bg-warning">
-              <input type="radio" name="credit_record" value="1" />&nbsp;是
-              <input type="radio" name="credit_record" value="0" />&nbsp;否
+              <input type="radio" name="has_loan" value="1" />&nbsp;是
+              <input type="radio" name="has_loan" value="0" />&nbsp;否
           </div>
       </div>
     </div>
@@ -350,11 +355,11 @@
           <tr>
             <td class="info">客户姓名：</td>
             <td>
-              <input type="text" name="realname" value="" class="form-control" />
+              <input type="text" name="realname" value="<?php echo $client->realname;?>" class="form-control" />
             </td>
             <td class="info">联系电话1：</td>
             <td>
-              <input type="text" name="mobile" value="" class="form-control" />
+              <input type="text" name="phone" value="<?php echo $client->phone;?>" class="form-control" />
             </td>
             <td class="info">
               <button class="btn btn-default" type="button">拨号</button>
@@ -366,7 +371,7 @@
           <tr>
             <td class="info">性别</td>
             <td>
-              <select class="form-control">
+              <select class="form-control" name="sex">
                 <option value="">请选择</option>
                 <option value="0">男</option>
                 <option value="1">女</option>
@@ -374,11 +379,11 @@
             </td>
             <td class="info">身份证号</td>
             <td>
-              <input type="text" name="id_no" value="" class="form-control" />
+              <input type="text" name="id_no" value="<?php echo $client->id_no;?>" class="form-control" />
             </td>
             <td class="info">名单类型</td>
             <td>
-              <select class="form-control">
+              <select class="form-control" name="menu_type">
                 <option value="0">请选择</option>
                 <option value="1">传统小贷</option>
                 <option value="2">保单贷</option>
@@ -395,11 +400,11 @@
             </td>
             <td class="info">税后收入：</td>
             <td>
-              <input type="text" name="salary" value="" class="form-control" />
+              <input type="text" name="salary_after_tax" value="" class="form-control" />
             </td>
             <td class="info">职业类型</td>
             <td>
-              <select class="form-control">
+              <select class="form-control" name="work_type">
                 <option value="0">请选择</option>
                 <option value="1">受薪人士</option>
                 <option value="2">私营业主</option>
@@ -408,13 +413,13 @@
             </td>
             <td class="info">联系电话2</td>
             <td>
-              <input type="text" name="phone" value="" class="form-control" />
+              <input type="text" name="phone2" value="" class="form-control" />
             </td>
           </tr>
           <tr>
             <td class="info">名单来源：</td>
             <td>
-              <input type="text" name="menu_source" value="" class="form-control" />
+              <input type="text" name="client_source" value="" class="form-control" />
             </td>
             <td class="info">媒体来源：</td>
             <td>
@@ -422,11 +427,7 @@
             </td>
             <td class="info">城市</td>
             <td>
-              <select class="form-control">
-                <option value="">请选择</option>
-                <option value="0">上海市</option>
-                <option value="1">北京市</option>
-              </select>
+              <input type="text" name="city" value="<?php echo $client->city;?>" class="form-control" />
             </td>
             <td class="info">
               <button class="btn btn-default" type="button">拨号2</button>
@@ -436,15 +437,15 @@
           <tr>
             <td class="info">预授信额度：</td>
             <td>
-              <input type="text" name="media_source" value="" class="form-control" />
+              <input type="text" name="credit_amount" value="" class="form-control" />
             </td>
             <td class="info">费率：</td>
             <td>
-              <input type="text" name="media_source" value="" class="form-control" />
+              <input type="text" name="rates" value="" class="form-control" />
             </td>
             <td class="info">产品类别</td>
             <td>
-              <input type="text" name="media_source" value="" class="form-control" />
+              <input type="text" name="product_type" value="" class="form-control" />
             </td>
             <td class="info">
               <button class="btn btn-primary" type="button">保存</button>
@@ -471,7 +472,7 @@
       <div class="row detail_line_div">
           <div class="col-md-1 col-sm-1 col-xs-1 btn-warning">筛选结果：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control col-md-3">
+              <select class="form-control col-md-3" name="select_result">
                   <option value="0">请选择</option>
                   <option value="1">符合</option>
                   <option value="2">不符合</option>
@@ -480,7 +481,7 @@
 
           <div class="col-md-1 col-sm-1 col-xs-1 btn-warning">处理结果：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control col-md-3">
+              <select class="form-control col-md-3" name="deal_result">
                   <option value="0">请选择</option>
                   <option value="1">无效（空号，错号，停机，五次以上无人接听）</option>
                   <option value="2">无人接听</option>
@@ -495,22 +496,22 @@
 
           <div class="col-md-1 col-sm-1 col-xs-1 btn-warning">下次联系时间：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-               <input type="text" name="mobile" value="<?php echo date('Y-m-d H:i:s');?>" class="form-control" />
+               <input type="text" name="next_contact_time" value="<?php echo date('Y-m-d H:i:s');?>" class="form-control" />
           </div>
           <div class="col-md-3 col-sm-3 col-xs-  bg-warning">&nbsp;</div>
       </div>
       <div class="row detail_line_div">
           <div class="col-md-1 col-sm-1 col-xs-1 btn-warning">重要提醒：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <input type="radio" name="credit_record" value="1" />&nbsp;是
-              <input type="radio" name="credit_record" value="0" />&nbsp;否
+              <input type="radio" name="important_alert" value="1" />&nbsp;是
+              <input type="radio" name="important_alert" value="0" />&nbsp;否
           </div>
           <div class="col-md-9 col-sm-9 col-xs-9  bg-warning">&nbsp;</div>
       </div>
       <div class="row detail_line_div">
           <div class="col-md-1 col-sm-1 col-xs-1 btn-warning textarea-div">备注：</div>
           <div class="col-md-5 col-sm-5 col-xs-5 bg-warning textarea-div">
-              <textarea ></textarea>
+              <textarea name="remark"></textarea>
           </div>
           <div class="col-md-6 bg-warning textarea-div">&nbsp;</div>
           <div class="clearfix"></div>
@@ -533,7 +534,7 @@
       <div class="row detail_line_div">
           <div class="col-md-1 col-sm-1 col-xs-1 btn-warning">产品：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control col-md-3">
+              <select class="form-control col-md-3" name="selected_product">
                   <option value="0">请选择</option>
                   <option value="1">高端私营业主贷</option>
                   <option value="2">高端薪金贷</option>
@@ -553,7 +554,7 @@
           </div>
           <div class="col-md-1 col-sm-1 col-xs-1 btn-warning">客户类型：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-warning">
-              <select class="form-control col-md-3">
+              <select class="form-control col-md-3" name="client_type">
                   <option value="0">请选择</option>
                   <option value="1">A</option>
                   <option value="2">B</option>
@@ -581,39 +582,39 @@
       <div class="row detail_line_div">
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info">借款人：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-info">
-               <input type="text" name="mobile" value="" class="form-control" />
+               <input type="text" name="borrower_name" value="" class="form-control" />
           </div>
 
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info">联系电话1：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-info">
-               <input type="text" name="mobile" value="" class="form-control" />
+               <input type="text" name="contact_mobile1" value="" class="form-control" />
           </div>
 
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info">联系电话2：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-info">
-               <input type="text" name="mobile" value="" class="form-control" />
+               <input type="text" name="contact_mobile2" value="" class="form-control" />
           </div>
 
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info">身份证号：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-info">
-               <input type="text" name="mobile" value="" class="form-control" />
+               <input type="text" name="borrower_id_no" value="<?php echo $client->id_no;?>" class="form-control" />
           </div>
 
       </div>
       <div class="row detail_line_div">
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info">上门时间：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-info">
-               <input type="text" name="mobile" value="" class="form-control" />
+               <input type="text" name="store_time" value="" class="form-control" />
           </div>
 
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info">上门门店：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-info">
-               <input type="text" name="mobile" value="" class="form-control" />
+               <input type="text" name="store_name" value="" class="form-control" />
           </div>
 
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info">门店地址：</div>
           <div class="col-md-2 col-sm-2 col-xs-2 bg-info">
-               <input type="text" name="mobile" value="" class="form-control" />
+               <input type="text" name="store_address" value="" class="form-control" />
           </div>
 
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info">&nbsp;</div>
@@ -625,17 +626,17 @@
       <div class="row detail_line_div">
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info textarea-div">上门备注：</div>
           <div class="col-md-5 col-sm-5 col-xs-5 bg-info textarea-div">
-              <textarea ></textarea>
+              <textarea name="store_remark"></textarea>
           </div>
           <div class="col-md-1 col-sm-1 col-xs-1 btn-info textarea-div">坐席备注：</div>
           <div class="col-md-5 col-sm-5 col-xs-5 bg-info textarea-div">
-              <textarea ></textarea>
+              <textarea name="employee_remark"></textarea>
           </div>
       </div>
       <div class="row detail_line_div">
-          <div class="col-md-1 col-sm-1 col-xs-1 btn-info textarea-div">上门备注：</div>
+          <div class="col-md-1 col-sm-1 col-xs-1 btn-info textarea-div">差异化政策：</div>
           <div class="col-md-5 col-sm-5 col-xs-5 bg-info textarea-div">
-              <textarea ></textarea>
+              <textarea name="different_policy"></textarea>
           </div>
           <div class="col-md-6 bg-info textarea-div">&nbsp;</div>
 
@@ -644,8 +645,8 @@
     </div>
   </div>
   <div class="container text-center">
-      <button type="button" class="btn btn-primary">保存</button>
-      <button type="button" class="btn btn-info">保存并提取下一个</button>
+      <button type="button" class="btn btn-primary btn-save-button">保存</button>
+      <button type="button" class="btn btn-info btn-save-button">保存并提取下一个</button>
   </div>
 
   <div class="x_panel">
@@ -677,16 +678,4 @@
 
 </div>
 <div class="clearfix"></div>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $(".btn-primary").click(function(){
-        show_stack_modal('success','保存成功！');
-    })
-
-    $(".btn-info").click(function(){
-        show_stack_modal('success','保存成功并提取下一个任务！');
-    })
-
-  })
-</script>
 <?php $this->load->view('common_footer');?>
