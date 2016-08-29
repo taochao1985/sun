@@ -12,15 +12,22 @@
       </div>
       <div class="x_content">
           <form class="form-horizontal form-label-left input_mask">
+          <div class="col-md-2 col-sm-2 col-xs-2">
+             <label>批次</label>
+             <input id="batch" type="input" name="batch">
+          </div>
 
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <div class="btn btn-success fileinput-button">
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <div class="btn btn-success fileinput-button btn-xs">
                   <i class="glyphicon glyphicon-plus"></i>
-                  <span>上传文件</span>
+                  <span>上传导入文件</span>
                   <!-- The file input field used as target for the file upload widget -->
                   <input id="fileupload" type="file" name="files" multiple >
               </div>
-
+              <div class="btn btn-primary fileinput-button btn-xs" onclick="window.location.href='/files/template.csv'">
+                  <i class="fa fa-download"></i>
+                  <span>下载模板</span>
+              </div>
           </div>
 
         </form>
@@ -35,10 +42,14 @@
   $(function () {
     'use strict';
     function import_file(url){
-
-        $.post("/admin/data_import", {file_url:url}, function(data) {
+        var batch = $.trim($("#batch").val());
+        if(!batch){
+            show_stack_modal('error','请输入批次');
+            return false;
+        }
+        $.post("/admin/data_import", {file_url:url,batch:batch}, function(data) {
         if (data.success == 'yes') {
-          show_stack_modal('success','ffff');
+          show_stack_modal('success','导入成功');
         } else {
         }
       }, "json");

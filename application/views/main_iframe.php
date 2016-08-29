@@ -95,9 +95,39 @@
               <?php }?>
              <?php if($user->level == 3){?>
                 <li>
-                  <a href="/client/index/17" target="main_frame"><i class="fa fa-bell"></i> 提取新名单</a>
+                  <a href="/client/index" target="main_frame"><i class="fa fa-bell"></i> 提取新名单</a>
                 </li>
-              <li><a><i class="fa fa-calendar"></i> 预约前管理 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-cogs"></i> 事务提醒</a>
+                  <ul class="nav child_menu">
+                    <li>
+                    <a href="javascript:void(0)" class="info-number"><i class="fa fa-bell"></i> 重要提醒 <span class="badge bg-green setintval_span">3</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)" class="info-number"><i class="fa fa-bullhorn"></i> 取消提醒<span class="badge bg-green setintval_span">6</span></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-cogs"></i> 快速搜索</a>
+                  <ul class="nav child_menu">
+                    <li class="top_search">
+                      客户姓名<br/>
+
+                      <p>
+                        <input type="text" class="pull-left" style="width:70px;margin-right:5px;">
+                        <button class="btn-default btn-xs pull-left" type="button">查询!</button>
+                      </p>
+
+                    </li>
+                    <li class="clearfix">
+                       <p>客户电话</p>
+                       <p>
+                        <input type="text" class="pull-left" style="width:70px;margin-right:5px;">
+                        <button class="btn-default btn-xs pull-left" type="button">查询!</button>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+
+              <li><a><i class="fa fa-calendar"></i> 预约前管理</a>
                   <ul class="nav child_menu">
                     <li><a href="/date/not_date" target="main_frame">接触待跟踪</a>
                     </li>
@@ -109,7 +139,7 @@
                     </li>
                   </ul>
               </li>
-              <li><a><i class="fa fa-calendar"></i> 预约后管理 <span class="fa fa-chevron-down"></span></a>
+              <li><a><i class="fa fa-calendar"></i> 预约后管理</a>
                   <ul class="nav child_menu">
                     <li><a href="/date/not_date" target="main_frame">登记客户短信跟进</a>
                     </li>
@@ -187,15 +217,7 @@
                     </li>
                   </ul>
                 </li>
-              <?php if($user->level != 1){?>
 
-                <li>
-                  <a href="javascript:void(0)" class="info-number"><i class="fa fa-bullhorn"></i> 取消提醒<span class="badge bg-green setintval_span">6</span></a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)" class="info-number"><i class="fa fa-bell"></i> 重要提醒 <span class="badge bg-green setintval_span">3</span></a>
-                </li>
-              <?php }?>
               </ul>
             </div>
 
@@ -255,7 +277,7 @@
                   </li>
                 </ul>
               </li>
-             <?php if($user->level == 3){?> <li>
+             <?php $con = $this->router->class;if(($con=='client') && ($user->level == 3)){?> <li>
                   <button class="btn btn-primary" type="button">拨号</button>
                   <button class="btn btn-success" type="button">短信</button>
                   <button class="btn btn-info" type="button">微信</button>

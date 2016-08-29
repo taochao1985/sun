@@ -33,13 +33,15 @@ $(function() {
         }
     })
 
-
+    var submit_flag = 1;
     function get_fields_value($fields, submit_data){
         var fields = $fields.fields;
         var type   = $fields.type;
         for(var i=0; i<fields.length; i++){
             if(type == 'radio'){
-                submit_data[fields[i]] = $("input[name='"+fields[i]+"']:checked").val();
+                var tt = $("input[name='"+fields[i]+"']:checked").val();
+
+                submit_data[fields[i]] = tt?tt:'';
             }else if(type == 'select'){
                 submit_data[fields[i]] = $("select[name='"+fields[i]+"']").val();
             }else if(type == 'input'){
@@ -52,19 +54,21 @@ $(function() {
                     }
                 })
                 submit_data[fields[i]] = t_v;
+            }else if(type == 'textarea'){
+                submit_data[fields[i]] = $("textarea[name='"+fields[i]+"']").val();
             }
         }
         return submit_data;
     }
 
     $(document).ready(function(){
-        $(".btn-primary").click(function(){
+        /*$(".btn-primary").click(function(){
             show_stack_modal('success','保存成功！');
         })
 
         $(".btn-info").click(function(){
             show_stack_modal('success','保存成功并提取下一个任务！');
-        })
+        })*/
 
         $(".btn-save-button").click(function(){
             var next_flag = 0,$this = $(this);
@@ -75,7 +79,7 @@ $(function() {
                 credit_record : $("input[name='credit_record']:checked").val(),
                 work_cond     : $("input[name='work_cond']:checked").val()
             }
-            $select_fields = {
+            var $select_fields = {
                 type:'select',
                 fields:[
                             'work_time_1',
@@ -99,7 +103,7 @@ $(function() {
                 };
             submit_data = get_fields_value($select_fields, submit_data);
 
-            $input_fields = {
+            var $input_fields = {
                 type:'input',
                 fields:[
                             'bank_sent_salary_1',
@@ -139,7 +143,7 @@ $(function() {
                 };
             submit_data = get_fields_value($input_fields, submit_data);
 
-            $radio_fields = {
+            var $radio_fields = {
                 type:'radio',
                 fields:[
                          'house_status',
@@ -150,7 +154,8 @@ $(function() {
                        ]
             };
             submit_data = get_fields_value($radio_fields, submit_data);
-            $checkbox_fields = {
+
+            var $checkbox_fields = {
                 type:'checkbox',
                 fields:[
                          'car_house',
@@ -159,7 +164,8 @@ $(function() {
                        ]
             };
             submit_data = get_fields_value($checkbox_fields, submit_data);
-            $textarea_fields = {
+
+            var $textarea_fields = {
                 type:'textarea',
                 fields:[
                          'remark',
@@ -169,6 +175,19 @@ $(function() {
                        ]
             };
             submit_data = get_fields_value($textarea_fields, submit_data);
+
+            if(submit_flag){
+                submit_flag = 0 ;
+                $.post("/client/save_deal_result", submit_data, function(data) {
+                    submit_flag = 1;
+                      if (data.success == 'yes') {
+                            show_stack_modal('success','保存成功！');
+                      } else {
+                            show_stack_modal('error','保存失败！');
+                      }
+                }, "json");
+            }
+
 
         })
   })

@@ -28,7 +28,8 @@ class Admin extends CI_Controller {
                     'phone'   =>$data[2],
                     'id_no'   =>$data[3],
                     'city'    =>$data[4],
-                    'order_no'=>$order_no
+                    'order_no'=>$order_no,
+                    'batch'   =>$_POST['batch']
                     );
                 $this->sun->insert('original_lists',$temp_data);
             }
