@@ -49,7 +49,7 @@ $(function() {
             }else if(type == 'checkbox'){
                 var t_v = '';
                 $("input[type='checkbox'][name='"+fields[i]+"']").each(function(){
-                    if($(this).prop('checkbox')){
+                    if($(this).prop('checked')){
                         t_v+=$(this).val()+';';
                     }
                 })
@@ -75,9 +75,11 @@ $(function() {
             if($this.hasClass('btn-info')){
                 next_flag = 1;
             }
+            var credit_record = $("input[name='credit_record']:checked").val();
+            var work_cond     = $("input[name='work_cond']:checked").val();
             var submit_data = {
-                credit_record : $("input[name='credit_record']:checked").val(),
-                work_cond     : $("input[name='work_cond']:checked").val()
+                credit_record : credit_record?credit_record:0,
+                work_cond     : work_cond?work_cond:1
             }
             var $select_fields = {
                 type:'select',
@@ -138,7 +140,8 @@ $(function() {
                             'borrower_id_no',
                             'store_time',
                             'store_name',
-                            'store_address'
+                            'store_address',
+                            'client_id'
                         ]
                 };
             submit_data = get_fields_value($input_fields, submit_data);

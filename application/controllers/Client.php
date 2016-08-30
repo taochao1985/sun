@@ -92,7 +92,8 @@ class Client extends CI_Controller {
                         'remark',
                         'store_remark',
                         'employee_remark',
-                        'different_policy'
+                        'different_policy',
+                        'client_id'
                     );
         foreach ($fields as $key => $value) {
             //$sql = "ALTER TABLE  `deal_result` ADD  `".$value."` VARCHAR( 64 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL AFTER  `id`";

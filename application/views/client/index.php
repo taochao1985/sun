@@ -1,6 +1,7 @@
 <?php $this->load->view('common_header');?>
 <script type="text/javascript" src="/assets/js/page/client_detail.js"></script>
 <div class="col-md-12 col-sm-12 col-xs-12 row">
+<input type="hidden" name="client_id" value="<?php echo $client->id;?>" />
  <div class="container form-inline main_client_info">
     <div class="form-group">
       <label for="exampleInputName2">订单编号：</label>
