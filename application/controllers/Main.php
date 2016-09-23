@@ -22,7 +22,9 @@ class Main extends CI_Controller {
     }
 
     public function main(){
-        $this->load->view('main/index');
+        $clients = $this->sun->select('clients');
+        $data['clients'] = $clients;
+        $this->load->view('main/index',$data);
     }
 
     function test(){

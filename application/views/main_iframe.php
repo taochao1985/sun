@@ -102,8 +102,6 @@
                     <li>
                     <a href="javascript:void(0)" class="info-number"><i class="fa fa-bell"></i> 重要提醒 <span class="badge bg-green setintval_span">3</span></a>
                     </li>
-                    <li><a href="javascript:void(0)" class="info-number"><i class="fa fa-bullhorn"></i> 取消提醒<span class="badge bg-green setintval_span">6</span></a>
-                    </li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-cogs"></i> 快速搜索</a>
